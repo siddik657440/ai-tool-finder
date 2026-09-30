@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Tool Finder | 20 Useful AI Tools</title>
+<meta name="description" content="Discover useful AI tools for writing, images, video, coding, productivity and education. Find the right AI tool for your task.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--text:#101828;--muted:#667085;--brand:#5b55e8;--soft:#eef0ff;--border:#e4e7ec}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5}.nav{max-width:1120px;margin:auto;padding:17px 20px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:850;font-size:20px}.pill{background:var(--soft);color:var(--brand);padding:7px 11px;border-radius:99px;font-size:12px;font-weight:800}
+main{max-width:1120px;margin:auto;padding:48px 20px}.hero{text-align:center;max-width:800px;margin:auto}.hero h1{font-size:clamp(38px,7vw,66px);line-height:1.02;letter-spacing:-2.5px;margin:0 0 16px}.hero h1 span{color:var(--brand)}.hero p{color:var(--muted);font-size:18px;margin:0 auto 26px}.search{display:flex;gap:10px;max-width:680px;margin:0 auto 30px}.search input{flex:1;padding:15px 17px;border:1px solid var(--border);border-radius:14px;font-size:16px;background:#fff;outline:none}.search input:focus{border-color:var(--brand)}button{border:0;border-radius:14px;background:var(--brand);color:white;font-weight:800;padding:0 22px;cursor:pointer}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:30px}.filter{border:1px solid var(--border);background:#fff;color:#475467;padding:8px 12px;border-radius:99px;cursor:pointer}.filter.active{background:var(--soft);color:var(--brand);border-color:#cfd2ff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:19px;box-shadow:0 5px 22px rgba(16,24,40,.04)}.emoji{font-size:28px}.tag{display:inline-block;margin-top:11px;background:#f2f4f7;color:#475467;border-radius:99px;padding:4px 9px;font-size:11px;font-weight:700}.card h3{margin:9px 0 6px;font-size:17px}.card p{color:var(--muted);font-size:14px;min-height:64px;margin:0 0 14px}.card a{display:inline-block;text-decoration:none;color:var(--brand);font-weight:800;font-size:14px}.smartlink{display:inline-block;margin-top:18px;background:var(--brand);color:#fff;text-decoration:none;padding:13px 20px;border-radius:12px;font-weight:800}.smartlink:hover{opacity:.92}.ad-slot{margin:28px auto;padding:22px;text-align:center;border:1px dashed #cfd4dc;border-radius:16px;background:#fff;color:#98a2b3;font-size:13px;max-width:900px}.ad-slot strong{display:block;color:#667085;margin-bottom:5px}
+footer{max-width:1120px;margin:10px auto 40px;padding:0 20px;color:#98a2b3;font-size:12px;text-align:center}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){main{padding-top:34px}.search{flex-direction:column}.search button{height:48px}.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">AI Tool Finder</div><div class="pill">Free AI Resources</div></div></header>
+<main>
+<section class="hero">
+<h1>Find the Right <span>AI Tool</span> for Your Task</h1>
+<p>Explore useful AI tools for writing, images, video, coding, productivity and learning—all in one simple directory.</p>
+<div class="search"><input id="q" placeholder="Search tools, e.g. writing, video, coding..." autocomplete="off"><button id="searchBtn">Search</button></div>
+<div class="filters" id="filters"></div>
+</section>
+
+<div class="ad-slot" aria-label="advertising area">
+<strong>Sponsored</strong>
+Discover useful AI resources and tools.
+<a class="smartlink" href="https://www.profitableratecpmnetwork.com/taqtd0rq?key=4e0a15ff6529ca140c2dcb78ace3c522" target="_blank" rel="noopener noreferrer sponsored">Continue to AI Tools →</a>
+</div>
+
+<section class="grid" id="grid"></section>
+
+<div class="ad-slot"><strong>Advertisement</strong>Optional second approved ad placement. Do not use deceptive buttons or forced clicks.</div>
+</main>
+<footer>AI Tool Finder provides informational listings. Always review each tool's current pricing, terms and privacy policy before using it.</footer>
+
+<script>
+const tools=[
+["Chat & Writing","✍️","Writing","Writing, brainstorming and general-purpose AI assistance."],
+["AI Image Creation","🎨","Images","Create and edit images with modern AI-powered tools."],
+["AI Video Creation","🎬","Video","Explore tools for video generation, editing and captions."],
+["Coding Assistants","💻","Coding","AI tools for coding, debugging and developer workflows."],
+["Meeting Notes","📝","Productivity","Turn meetings and conversations into organized notes."],
+["AI Presentations","📊","Productivity","Create presentations and visual slides faster."],
+["Research Assistants","🔎","Research","Find, summarize and organize information with AI."],
+["AI Study Helpers","📚","Education","Useful AI tools for learning, explanations and study planning."],
+["Resume Helpers","💼","Career","Improve resumes, cover letters and job-search materials."],
+["Voice Generators","🎙️","Audio","Create or edit voice and audio content with AI."],
+["Transcription Tools","🗣️","Audio","Convert recorded speech into searchable text."],
+["Background Removers","🖼️","Images","Remove image backgrounds and prepare clean visuals."],
+["Logo & Brand Ideas","✨","Design","Generate creative starting points for branding projects."],
+["Email Assistants","📧","Productivity","Draft, rewrite and organize everyday email."],
+["Translation Tools","🌐","Language","Translate and adapt content across languages."],
+["Grammar Checkers","🔤","Writing","Improve clarity, grammar and readability."],
+["PDF Assistants","📄","Productivity","Work with documents, summaries and extracted information."],
+["Marketing Helpers","📣","Marketing","Generate ideas and drafts for marketing content."],
+["Social Content Tools","📱","Marketing","Plan and create social-media content more efficiently."],
+["Learning Planners","🎯","Education","Build study plans and organize learning goals."]
+];
+const categories=["All",...new Set(tools.map(x=>x[2]))];
+const grid=document.getElementById("grid"),filters=document.getElementById("filters"),q=document.getElementById("q");
+function renderFilters(active="All"){
+ filters.innerHTML=categories.map(c=>`<button class="filter ${c===active?"active":""}" onclick="setCategory('${c}')">${c}</button>`).join("");
+}
+let category="All";
+function render(){
+ const term=q.value.toLowerCase().trim();
+ grid.innerHTML=tools.filter(t=>(category==="All"||t[2]===category)&&(!term||(t[0]+" "+t[2]+" "+t[3]).toLowerCase().includes(term)))
+ .map(t=>`<article class="card"><div class="emoji">${t[1]}</div><span class="tag">${t[2]}</span><h3>${t[0]}</h3><p>${t[3]}</p><a href="#advertising" onclick="return toolInfo('${t[0].replace(/'/g,"&#39;")}')">Learn more →</a></article>`).join("");
+ if(!grid.innerHTML) grid.innerHTML='<div class="card" style="grid-column:1/-1;text-align:center"><h3>No tools found</h3><p>Try another keyword or category.</p></div>';
+}
+function setCategory(c){category=c;renderFilters(c);render()}
+function toolInfo(name){alert(name+" is a directory category. Replace this link with the official tool URL or your approved destination.");return false}
+q.addEventListener("input",render);document.getElementById("searchBtn").addEventListener("click",render);
+renderFilters();render();
+</script>
+</body>
+</html>
